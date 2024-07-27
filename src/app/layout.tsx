@@ -27,7 +27,7 @@ export default function RootLayout({
         >
           <div className="relative flex min-h-screen flex-col">
             <AppNavigationMenu />
-            <div className="flex-1">{children}</div>
+            <div className="max-w-[85%] mx-auto">{children}</div>
           </div>
         </ThemeProvider>
       </body>
