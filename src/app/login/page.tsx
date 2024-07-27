@@ -110,7 +110,7 @@ export default function Page() {
                     </form>
                 </Form>
                 <div className="flex justify-center items-center gap-1">
-                    <span>Don't have an account?</span>
+                    <span>Don&apos;t have an Account ?</span>
                     <Link href="/register">
                         <span className="text-primary cursor-pointer font-bold">Register</span>
                     </Link>
