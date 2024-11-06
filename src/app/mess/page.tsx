@@ -20,7 +20,7 @@ export default function MessListing() {
                 </div>
 
                 <Image
-                    src="/ghar-ka-khana.jpg"
+                    src="/ghar_ka_khana.jpg"
                     alt="ghar ka khana"
                     className="w-full h-64 object-cover rounded-lg"
                     width={800}
