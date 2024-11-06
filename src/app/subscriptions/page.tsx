@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function SubscriptionManagement() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="mt-16 min-h-screen bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         <h1 className="text-3xl font-bold text-orange-600">Manage Your Subscriptions</h1>
         

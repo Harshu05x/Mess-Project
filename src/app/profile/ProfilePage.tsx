@@ -13,7 +13,7 @@ export default function UserProfile() {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="mt-16 min-h-screen bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold text-orange-600">User Profile</h1>

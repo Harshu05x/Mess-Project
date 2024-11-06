@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Component() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="mt-16 flex flex-col min-h-screen bg-white">
       <main className="flex-1">
         <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-orange-50 bg-cover bg-bottom" style={{ backgroundImage: "url('/hero_section.webp')" }}>
           <div className="absolute inset-0 bg-black opacity-50"></div> 

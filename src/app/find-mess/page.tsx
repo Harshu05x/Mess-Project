@@ -12,7 +12,7 @@ export default function MessSearch() {
   const [priceRange, setPriceRange] = useState([0, 100])
 
   return (
-    <div className="w-screen min-h-screen bg-gray-100 p-8">
+    <div className="mt-16 w-screen min-h-screen bg-gray-100 p-8">
       <div className="space-y-8 w-full">
         <h1 className="text-3xl font-bold text-orange-600">Find Your Perfect Mess</h1>
         

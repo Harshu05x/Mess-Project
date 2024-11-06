@@ -26,7 +26,7 @@ export default function BlogArticles() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="mt-16 min-h-screen bg-gray-100">
       <div className="bg-orange-500 w-full h-60 flex flex-col justify-center items-center gap-8">
         <h1 className="text-3xl font-bold text-white tracking-wide">
           MEAL&apos;SPOTTER Blog

@@ -15,10 +15,12 @@ export default function Signup() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <div className="flex items-center justify-center mb-4">
-            <ShoppingBag className="h-8 w-8 text-orange-500" />
-            <span className="ml-2 text-2xl font-bold text-orange-500">MEAL&apos;SPOTTER</span>
-          </div>
+          <Link href={'/'}>
+            <div className="flex items-center justify-center mb-4">
+              <ShoppingBag className="h-8 w-8 text-orange-500" />
+              <span className="ml-2 text-2xl font-bold text-orange-500">MEAL&apos;SPOTTER</span>
+            </div>
+          </Link>
           <CardTitle className="text-2xl font-bold text-center">Create an account</CardTitle>
           <CardDescription className="text-center">
             Enter your details to create your MEAL&apos;SPOTTER account

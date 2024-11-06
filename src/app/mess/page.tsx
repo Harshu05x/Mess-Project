@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function MessListing() {
     return (
-        <div className="min-h-screen bg-gray-100 p-8">
+        <div className="mt-16 min-h-screen bg-gray-100 p-8">
             <div className="max-w-4xl mx-auto space-y-8">
                 <div className="flex justify-between items-center">
                     <h1 className="text-3xl font-bold text-orange-600">Ghar Ka Khana
