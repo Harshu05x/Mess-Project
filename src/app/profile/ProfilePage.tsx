@@ -54,11 +54,11 @@ export default function UserProfile() {
         </Card>
 
         <Tabs defaultValue="personal">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="personal">Personal Info</TabsTrigger>
             <TabsTrigger value="subscriptions">Subscriptions</TabsTrigger>
             <TabsTrigger value="payment">Payment</TabsTrigger>
-            <TabsTrigger value="notifications">Notifications</TabsTrigger>
+            {/* <TabsTrigger value="notifications">Notifications</TabsTrigger> */}
           </TabsList>
           <TabsContent value="personal" className="mt-4">
             <Card>
@@ -143,7 +143,7 @@ export default function UserProfile() {
               </CardContent>
             </Card>
           </TabsContent>
-          <TabsContent value="notifications" className="mt-4">
+          {/* <TabsContent value="notifications" className="mt-4">
             <Card>
               <CardHeader>
                 <CardTitle>Notification Preferences</CardTitle>
@@ -163,7 +163,7 @@ export default function UserProfile() {
                 />
               </CardContent>
             </Card>
-          </TabsContent>
+          </TabsContent> */}
         </Tabs>
       </div>
     </div>
