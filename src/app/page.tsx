@@ -8,9 +8,10 @@ export default function Component() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-orange-50 bg-cover bg-center" style={{ backgroundImage: "url('/path/to/your/hero-image.jpg')" }}>
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center bg-white bg-opacity-75 p-6 rounded-lg">
+        <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-orange-50 bg-cover bg-bottom" style={{ backgroundImage: "url('/hero_section.webp')" }}>
+          <div className="absolute inset-0 bg-black opacity-50"></div> 
+          <div className="relative container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center bg-white bg-opacity-60 p-6 rounded-lg">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-orange-500">
                   Discover Delicious Meals Near You
