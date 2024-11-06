@@ -17,7 +17,7 @@ export default function Login() {
                 <CardHeader className="space-y-1">
                     <div className="flex items-center justify-center mb-4">
                         <ShoppingBag className="h-8 w-8 text-orange-500" />
-                        <span className="ml-2 text-2xl font-bold text-orange-500">MEAL'SPOTTER</span>
+                        <span className="ml-2 text-2xl font-bold text-orange-500">MEAL&apos;SPOTTER</span>
                     </div>
                     <CardTitle className="text-2xl font-bold text-center">Welcome back</CardTitle>
                     <CardDescription className="text-center">
@@ -69,7 +69,7 @@ export default function Login() {
                 <CardFooter className="flex flex-col space-y-4">
                     <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">Log in</Button>
                     <div className="text-sm text-center text-gray-500">
-                        Don't have an account?{" "}
+                        Don&apos;t have an account?{" "}
                         <Link href="/register" className="text-orange-500 hover:underline">
                             Sign up
                         </Link>

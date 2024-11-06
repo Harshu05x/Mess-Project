@@ -12,7 +12,7 @@ export function AppNavigationMenu() {
     <Menubar className="fixed w-full h-16 flex items-center bg-[#fff7f17e] backdrop-blur-xl text-orange-500 md:px-6 justify-between z-50 border-b">
       <Link className="flex items-center justify-center" href='/'>
         <ShoppingBag className="h-6 w-6" />
-        <span className="ml-2 text-2xl font-bold">MEAL'SPOTTER</span>
+        <span className="ml-2 text-2xl font-bold">MEAL&apos;SPOTTER</span>
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
         <Link className="text-sm font-medium hover:underline underline-offset-4" href="/blog">

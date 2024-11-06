@@ -17,11 +17,11 @@ export default function Signup() {
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center mb-4">
             <ShoppingBag className="h-8 w-8 text-orange-500" />
-            <span className="ml-2 text-2xl font-bold text-orange-500">MEAL'SPOTTER</span>
+            <span className="ml-2 text-2xl font-bold text-orange-500">MEAL&apos;SPOTTER</span>
           </div>
           <CardTitle className="text-2xl font-bold text-center">Create an account</CardTitle>
           <CardDescription className="text-center">
-            Enter your details to create your MEAL'SPOTTER account
+            Enter your details to create your MEAL&apos;SPOTTER account
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">

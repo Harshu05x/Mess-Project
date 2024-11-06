@@ -29,7 +29,7 @@ export default function BlogArticles() {
     <div className="min-h-screen bg-gray-100">
       <div className="bg-orange-500 w-full h-60 flex flex-col justify-center items-center gap-8">
         <h1 className="text-3xl font-bold text-white tracking-wide">
-          MEAL'SPOTTER Blog
+          MEAL&apos;SPOTTER Blog
         </h1>
         <div className="flex flex-col justify-center items-center gap-4">
           <Input
@@ -130,7 +130,7 @@ export default function BlogArticles() {
           <CardContent>
             <p className="text-gray-600 mb-4">
               Stay updated with the latest articles, recipes, and tips from
-              MEAL'SPOTTER.
+              MEAL&apos;SPOTTER.
             </p>
             <div className="flex gap-4">
               <Input

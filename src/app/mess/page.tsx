@@ -66,7 +66,7 @@ export default function MessListing() {
                     <TabsContent value="menu" className="mt-4">
                         <Card>
                             <CardHeader>
-                                <CardTitle>Today's Menu</CardTitle>
+                                <CardTitle>Today&apos;s Menu</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <ul className="space-y-2">
