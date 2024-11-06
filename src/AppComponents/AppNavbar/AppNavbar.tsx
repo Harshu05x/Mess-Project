@@ -15,13 +15,13 @@ export function AppNavigationMenu() {
           <span className="ml-2 text-2xl font-bold">MEAL'SPOTTER</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-            Plans
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/blog">
+            Blogs
           </Link>
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/find-mess">
             Find Mess
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/subscriptions">
             Subscriptions
           </Link>
           <Button className="text-sm font-medium bg-orange-500 text-white hover:bg-orange-100" variant="ghost">

@@ -141,9 +141,11 @@ function MessCard({ name, cuisine, rating, price, location, image, imgClassName 
           <MapPin className="h-5 w-5 text-gray-400" />
           <span className="ml-1 text-sm text-gray-500">{location}</span>
         </div>
-        <Button className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white">
-          View Menu
-        </Button>
+        <Link href={`/mess?name=${name.toLowerCase().replace(/ /g, '-')}`}>
+            <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+              View Menu
+            </Button>
+        </Link>
       </CardContent>
     </Card>
   )

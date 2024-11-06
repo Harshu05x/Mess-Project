@@ -22,7 +22,7 @@ export default function MessListing() {
                 <Image
                     src="/ghar_ka_khana.jpg"
                     alt="ghar ka khana"
-                    className="w-full h-64 object-cover rounded-lg"
+                    className="w-full h-96 object-cover rounded-lg"
                     width={800}
                     height={400}
                 />
