@@ -31,7 +31,7 @@ export default function UserProfile() {
             <div className="flex items-center space-x-6">
               <Avatar className="h-24 w-24">
                 <AvatarImage
-                  src="/placeholder.svg?height=96&width=96"
+                  src="https://github.com/shadcn.png"
                   alt="User Avatar"
                 />
                 <AvatarFallback>JD</AvatarFallback>
@@ -40,7 +40,7 @@ export default function UserProfile() {
                 <h2 className="text-2xl font-semibold">John Doe</h2>
                 <p className="text-gray-500">john.doe@example.com</p>
                 <div className="flex items-center mt-2">
-                  <Badge variant="secondary" className="mr-2">
+                  <Badge variant="secondary" className="mr-2 bg-orange-100">
                     Premium Member
                   </Badge>
                   <Star className="h-4 w-4 text-yellow-500 fill-current" />
@@ -109,13 +109,13 @@ export default function UserProfile() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <SubscriptionItem
-                  name="Homestyle Haven"
+                  name="Ghar Ka Khana"
                   plan="Weekly Plan"
                   price="$56/week"
                   renewalDate="July 28, 2024"
                 />
                 <SubscriptionItem
-                  name="Fitness Fuel"
+                  name="Mahalakshami Mess"
                   plan="Monthly Plan"
                   price="$200/month"
                   renewalDate="August 15, 2024"

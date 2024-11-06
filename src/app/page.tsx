@@ -31,13 +31,13 @@ export default function Component() {
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-orange-500">Featured Mess</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center space-y-4 p-4 bg-white rounded-lg shadow-lg border border-orange-100">
+              <div className="flex flex-col items-center space-y-4 bg-white rounded-lg shadow-lg border border-orange-100">
                 <Image
                   alt="Ghar Ka Khana"
-                  className="aspect-video overflow-hidden rounded-lg object-cover object-center"
+                  className="aspect-video overflow-hidden rounded-t-lg object-cover object-center"
                   height="200"
                   src="/ghar_ka_khana.jpg"
-                  width="300"
+                  width="500"
                 />
                 <h3 className="text-xl font-bold text-orange-500">Ghar Ka Khana</h3>
                 <div className="flex items-center space-x-1">
@@ -49,15 +49,17 @@ export default function Component() {
                 </div>
                 <p className="text-sm text-gray-500 text-center">Delicious home-cooked meals with a variety of options.</p>
                 <p className="text-lg font-semibold text-orange-500">Starting at $8/meal</p>
-                <Button className="bg-orange-500 text-white hover:bg-orange-600">View Menu</Button>
+                <Link href="/mess" className=" py-2">
+                  <Button className="bg-orange-500 text-white hover:bg-orange-600">View Menu</Button>
+                </Link>
               </div>
-              <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-lg border border-orange-100">
+              <div className="flex flex-col items-center space-y-4 bg-white rounded-lg shadow-lg border border-orange-100">
                 <Image
                   alt="Baba da Dhaba"
-                  className="aspect-video overflow-hidden rounded-lg object-cover object-top"
+                  className="aspect-video overflow-hidden rounded-t-lg object-cover object-top"
                   height="200"
                   src="/baba_da_dhaba.jpg"
-                  width="300"
+                  width="500"
                 />
                 <h3 className="text-xl font-bold text-orange-500">Baba da Dhaba</h3>
                 <div className="flex items-center space-x-1">
@@ -69,15 +71,17 @@ export default function Component() {
                 </div>
                 <p className="text-sm text-gray-500 text-center">High-protein, balanced meals for fitness enthusiasts.</p>
                 <p className="text-lg font-semibold text-orange-500">Starting at $10/meal</p>
-                <Button className="bg-orange-500 text-white hover:bg-orange-600">View Menu</Button>
+                <Link href="/mess" className=" py-2">
+                  <Button className="bg-orange-500 text-white hover:bg-orange-600">View Menu</Button>
+                </Link>
               </div>
-              <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-lg border border-orange-100">
+              <div className="flex flex-col items-center space-y-4 bg-white rounded-lg shadow-lg border border-orange-100">
                 <img
                   alt="Mahalakshami Mess"
-                  className="aspect-video overflow-hidden rounded-lg object-cover object-bottom"
-                  height="200"
+                  className="aspect-video overflow-hidden rounded-t-lg object-cover object-bottom"
+                  height="100"
                   src="/mahalakshami_mess.jpg"
-                  width="300"
+                  width="500"
                 />
                 <h3 className="text-xl font-bold text-orange-500">Mahalakshami Mess</h3>
                 <div className="flex items-center space-x-1">
@@ -89,7 +93,9 @@ export default function Component() {
                 </div>
                 <p className="text-sm text-gray-500 text-center">Delicious vegetarian and vegan options for plant-based eaters.</p>
                 <p className="text-lg font-semibold text-orange-500">Starting at $9/meal</p>
-                <Button className="bg-orange-500 text-white hover:bg-orange-600">View Menu</Button>
+                <Link href="/mess" className=" py-2">
+                  <Button className="bg-orange-500 text-white hover:bg-orange-600">View Menu</Button>
+                </Link>
               </div>
             </div>
           </div>
