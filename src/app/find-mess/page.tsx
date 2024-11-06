@@ -70,37 +70,39 @@ export default function MessSearch() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
             </div>
             <div className="grid gap-6 md:grid-cols-2">
+                <MessCard
+                  name="Ghar Ka Khana"
+                  cuisine="Vegetarian"
+                  rating={4.7}
+                  price={9}
+                  location="789 Oak St, City"
+                  image='/ghar_ka_khana.jpg'
+                />
               <MessCard
-                name="Homestyle Haven"
+                name="Baba da Dhaba"
                 cuisine="Indian"
                 rating={4.5}
                 price={8}
                 location="123 Main St, City"
-                image="/placeholder.svg?height=200&width=300"
+                image="/baba_da_dhaba.jpg"
+                imgClassName='object-top'
               />
               <MessCard
-                name="Fitness Fuel"
+                name="Mahalakshami Mess"
                 cuisine="Health Food"
                 rating={4.2}
                 price={10}
                 location="456 Elm St, City"
-                image="/placeholder.svg?height=200&width=300"
+                image="/mahalakshami_mess.jpg"
+                imgClassName='object-bottom'
               />
               <MessCard
-                name="Veggie Delight"
+                name="Ghar Ka Khana"
                 cuisine="Vegetarian"
                 rating={4.7}
                 price={9}
                 location="789 Oak St, City"
-                image="/placeholder.svg?height=200&width=300"
-              />
-              <MessCard
-                name="Spice Paradise"
-                cuisine="Indian"
-                rating={4.3}
-                price={7}
-                location="101 Pine St, City"
-                image="/placeholder.svg?height=200&width=300"
+                image='/ghar_ka_khana.jpg'
               />
             </div>
           </div>
@@ -117,12 +119,13 @@ interface MessCardProps {
   price: number;
   location: string;
   image: string;
+  imgClassName?: string;
 }
 
-function MessCard({ name, cuisine, rating, price, location, image }: MessCardProps) {
+function MessCard({ name, cuisine, rating, price, location, image, imgClassName }: MessCardProps) {
   return (
     <Card className="overflow-hidden">
-      <img src={image} alt={name} className="w-full h-48 object-cover" />
+      <img src={image} alt={name} className={`w-full h-60 object-cover ${imgClassName || 'object-center'}`} />
       <CardContent className="p-4">
         <h3 className="text-xl font-semibold text-orange-600">{name}</h3>
         <p className="text-sm text-gray-500">{cuisine}</p>
