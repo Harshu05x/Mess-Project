@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 
 export function AppNavigationMenu() {
   return (
-    <Menubar className="px-4 lg:px-6 h-14 flex items-center bg-orange-500 text-white md:px-6 w-full justify-between max-w-[85%] mx-auto">
+    <Menubar className="h-14 flex items-center bg-orange-500 text-white md:px-6 w-full justify-between">
       {/* <div>
         <Link href="/">
           <Image src="/logo_transparent.png" alt="logo" width={80} height={40} />
@@ -19,7 +19,7 @@ export function AppNavigationMenu() {
         <ModeToggle />
       </div> */}
 
-        <Link className="flex items-center justify-center" href="#">
+        <Link className="flex items-center justify-center" href='/'>
           <ShoppingBag className="h-6 w-6" />
           <span className="ml-2 text-2xl font-bold">MEAL'SPOTTER</span>
         </Link>
