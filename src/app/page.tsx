@@ -11,12 +11,12 @@ export default function Component() {
         <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-orange-50 bg-cover bg-bottom" style={{ backgroundImage: "url('/hero_section.webp')" }}>
           <div className="absolute inset-0 bg-black opacity-50"></div> 
           <div className="relative container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center bg-white bg-opacity-60 p-6 rounded-lg">
+            <div className="flex flex-col items-center space-y-4 text-center bg-[#5c5c5c7e] backdrop-blur-sm p-6 rounded-3xl">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-orange-500">
                   Discover Delicious Meals Near You
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                <p className="mx-auto max-w-[700px] text-white md:text-xl">
                   Subscribe to our meal plans and enjoy fresh, home-cooked meals every day. Perfect for busy professionals and students.
                 </p>
               </div>
