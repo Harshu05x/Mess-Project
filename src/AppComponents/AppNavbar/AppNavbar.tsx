@@ -9,16 +9,7 @@ import { Button } from "@/components/ui/button"
 
 export function AppNavigationMenu() {
   return (
-    <Menubar className="h-14 flex items-center bg-orange-500 text-white md:px-6 w-full justify-between">
-      {/* <div>
-        <Link href="/">
-          <Image src="/logo_transparent.png" alt="logo" width={80} height={40} />
-        </Link>
-      </div>
-      <div className="flex justify-center items-center gap-[1em]">
-        <ModeToggle />
-      </div> */}
-
+    <Menubar className="fixed w-full h-16 flex items-center bg-[#fff7f17e] backdrop-blur-xl text-orange-500 md:px-6 justify-between z-50 border-b">
         <Link className="flex items-center justify-center" href='/'>
           <ShoppingBag className="h-6 w-6" />
           <span className="ml-2 text-2xl font-bold">MEAL'SPOTTER</span>
@@ -33,7 +24,7 @@ export function AppNavigationMenu() {
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
             Subscriptions
           </Link>
-          <Button className="text-sm font-medium bg-white text-orange-500 hover:bg-orange-100" variant="ghost">
+          <Button className="text-sm font-medium bg-orange-500 text-white hover:bg-orange-100" variant="ghost">
             Login
           </Button>
         </nav>
