@@ -7,8 +7,8 @@ import { AppNavigationMenu } from "@/AppComponents/AppNavbar/AppNavbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shadcn Template",
-  description: "© Pranav Kale 2K24",
+  title: "MealSpotter",
+  description: "© Harshad Madhbhave 2K24",
 };
 
 export default function RootLayout({
@@ -21,13 +21,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col">
             <AppNavigationMenu />
-            <div className="max-w-[85%] mx-auto">{children}</div>
+            <div className="max-w-screen">{children}</div>
           </div>
         </ThemeProvider>
       </body>

@@ -1,0 +1,39 @@
+enum SUBSCRIPTIONS {
+    WEEKLY = 'WEEKLY',
+    MONTHLY = 'MONTHLY',
+    THREE_MONTHS = '3_MONTHS',
+    SIX_MONTHS = '6_MONTHS',
+    YEARLY = 'YEARLY',
+}
+
+enum SUBSCRIPTION_PLANS_STATUS {
+    ACTIVE = 'ACTIVE',
+    EXPIRED = 'EXPIRED',
+    CANCELLED = 'CANCELLED',
+}
+
+enum PAYMENT_STATUS {
+    CAPTURED = 'captured',
+    FAILED = 'failed',
+    PENDING = 'pending',
+}
+
+enum MEAL_TYPES { 
+    VEG = 'VEG',
+    NON_VEG = 'NON_VEG',
+    VEGAN = 'VEGAN',
+}
+
+enum ROLES {
+    CUSTOMER = 'CUSTOMER',
+    MESS_OWNER = 'MESS_OWNER',
+    ADMIN = 'ADMIN',
+}
+
+export {
+    SUBSCRIPTIONS,
+    SUBSCRIPTION_PLANS_STATUS,
+    PAYMENT_STATUS,
+    MEAL_TYPES,
+    ROLES,
+}

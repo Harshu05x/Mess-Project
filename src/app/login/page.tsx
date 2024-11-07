@@ -1,122 +1,86 @@
-"use client"
-import React, { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+"use client";
+import { useState } from 'react'
 import { Button } from "@/components/ui/button"
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import Image from "next/image"
-import { USER_ROLES } from "@/data/type"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox"
+import { ShoppingBag, Mail, Lock, Eye, EyeOff } from "lucide-react"
 import Link from "next/link"
-import { VscEye, VscEyeClosed  } from "react-icons/vsc";
 
-export default function Page() {
-    const [role, setRole] = useState(USER_ROLES.STUDENT);
-    const [showPassword, setShowPassword] = useState(false);
-    const formSchema = z.object({
-        mobile: z.string().refine((value) => /^\d{10}$/.test(value), {
-            message: "Invalid Mobile Number.",
-        }),
-        password: z.string().refine((value) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/.test(value), {
-            message: "Password should contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character and min 8 and max 20 characters.",
-        }),
-    })
+export default function Login() {
+    const [showPassword, setShowPassword] = useState(false)
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            mobile: "",
-            password: "",
-        },
-    })
-    
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values);
-        console.log(role);
-    }
     return (
-        <div className="mx-auto sm:w-[320px] md:w-[550px] lg:w-[800px] mt-16">
-            <div className=" flex flex-col gap-2 p-4 items-center w-full border-gray-400 border-2 rounded-xl">
-                <h1 className="text-3xl font-bold text-center">Welcome
-                    <span className="text-primary"> Back to</span>
-                </h1>
-                <Image src="/logo_transparent.png" alt="logo" width={100} height={50} />
-                <div className=" flex rounded-full bg-gray-300 p-2">
-                    <span className={` ${role === USER_ROLES.STUDENT && " bg-primary text-white"} rounded-full px-2 py-1 cursor-pointer`}
-                        onClick={() => setRole(USER_ROLES.STUDENT)}
-                    >
-                        Student
-                    </span>
-                    <span className={`${role === USER_ROLES.MESS && " bg-primary text-white"} rounded-full px-2 py-1 cursor-pointer`}
-                        onClick={() => setRole(USER_ROLES.MESS)}
-                    >
-                        Mess
-                    </span>
-                </div>
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex flex-col w-full">
-                        <FormField
-                            control={form.control}
-                            name="mobile"
-                            render={({ field }) => (
-                                <FormItem
-                                    className="w-full"
-                                >
-                                    <FormLabel>Mobile</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="Enter Mobile Number" {...field} 
-                                            className="w-full"
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        
-                        <div className=" relative w-full">
-                            <FormField
-                                control={form.control}
-                                name="password"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Password</FormLabel>
-                                        <FormControl>
-                                            <Input type={showPassword ? "text" : "password"} 
-                                            {...field} placeholder="Enter Password"/>
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <Link href="/forgot-password" className=" w-full">
-                                <div className="text-primary cursor-pointer text-sm text-end italic">Forgot Password?</div>
-                            </Link>
-                            <div className=" absolute right-1 top-11">
-                                <span className="cursor-pointer text-lg" onClick={() => setShowPassword(!showPassword)}>
-                                    {showPassword ? <VscEyeClosed /> : <VscEye />}
-                                </span>
-                            </div>
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+            <Card className="w-full max-w-md">
+                <CardHeader className="space-y-1">
+                    <Link href={'/'}>
+                        <div className="flex items-center justify-center mb-4">
+                            <ShoppingBag className="h-8 w-8 text-orange-500" />
+                            <span className="ml-2 text-2xl font-bold text-orange-500">MEAL&apos;SPOTTER</span>
                         </div>
-
-                        <Button type="submit">Submit</Button>
-                    </form>
-                </Form>
-                <div className="flex justify-center items-center gap-1">
-                    <span>Don&apos;t have an Account ?</span>
-                    <Link href="/register">
-                        <span className="text-primary cursor-pointer font-bold">Register</span>
                     </Link>
-                </div>
-            </div>
-
+                    <CardTitle className="text-2xl font-bold text-center">Welcome back</CardTitle>
+                    <CardDescription className="text-center">
+                        Enter your email and password to login to your account
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                        <Label htmlFor="email">Email</Label>
+                        <div className="relative">
+                            <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                            <Input id="email" type="email" placeholder="m@example.com" className="pl-9" />
+                        </div>
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="password">Password</Label>
+                        <div className="relative">
+                            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                            <Input
+                                id="password"
+                                type={showPassword ? "text" : "password"}
+                                placeholder="••••••••"
+                                className="pl-9 pr-9"
+                            />
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="absolute right-1 top-1"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? (
+                                    <EyeOff className="h-4 w-4 text-gray-400" />
+                                ) : (
+                                    <Eye className="h-4 w-4 text-gray-400" />
+                                )}
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <Checkbox id="remember" />
+                        <label
+                            htmlFor="remember"
+                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
+                            Remember me
+                        </label>
+                    </div>
+                </CardContent>
+                <CardFooter className="flex flex-col space-y-4">
+                    <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">Log in</Button>
+                    <div className="text-sm text-center text-gray-500">
+                        Don&apos;t have an account?{" "}
+                        <Link href="/register" className="text-orange-500 hover:underline">
+                            Sign up
+                        </Link>
+                    </div>
+                    <Link href="#" className="text-sm text-center text-orange-500 hover:underline">
+                        Forgot your password?
+                    </Link>
+                </CardFooter>
+            </Card>
         </div>
     )
 }
