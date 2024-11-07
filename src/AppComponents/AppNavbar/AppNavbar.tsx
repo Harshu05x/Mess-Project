@@ -57,5 +57,15 @@ export function AppNavigationMenu() {
         </Menubar>
       )}
     </>
+    <Menubar className="flex justify-between px-[1em] py-[2em]">
+      <div>
+        <Link href="/">
+          <Image src="/logo_transparent.png" alt="logo" width={80} height={40} />
+        </Link>
+      </div>
+      <div className="flex justify-center items-center gap-[1em]">
+        <ModeToggle />
+      </div>
+    </Menubar>
   );
 }
