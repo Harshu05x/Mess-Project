@@ -11,8 +11,8 @@ import { Button } from "@/components/ui/button";
 export function AppNavigationMenu() {
   const pathname = usePathname();
   const { isSignedIn, user } = useUser();
-  console.log(user, isSignedIn);
-  console.log(pathname);
+  // console.log(user, isSignedIn);
+  // console.log(pathname);
 
   return (
     <>

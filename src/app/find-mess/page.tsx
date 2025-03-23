@@ -10,6 +10,35 @@ import Link from "next/link"
 
 export default function MessSearch() {
   const [priceRange, setPriceRange] = useState([0, 100])
+  const [messes, setMesses] = useState([
+    {
+      _id: "1",
+      name: "Gajanan Mess",
+      cuisine: "Vegetarian",
+      rating: 4.7,
+      price: 9,
+      location: "789 Oak St, City",
+      image: '/ghar_ka_khana.jpg'
+    },
+    {
+      _id: "2",
+      name: "Baba da Dhaba",
+      cuisine: "Indian",
+      rating: 4.5,
+      price: 8,
+      location: "123 Main St, City",
+      image: "/baba_da_dhaba.jpg"
+    },
+    {
+      _id: "3",
+      name: "Mahalakshami Mess",
+      cuisine: "Health Food",
+      rating: 4.2,
+      price: 10,
+      location: "456 Elm St, City",
+      image: "/mahalakshami_mess.jpg"
+    }
+  ])
 
   return (
     <div className="mt-16 w-screen min-h-screen bg-gray-100 p-8">
@@ -70,40 +99,18 @@ export default function MessSearch() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
             </div>
             <div className="grid gap-6 md:grid-cols-2">
+              {messes.map((mess, index) => (
                 <MessCard
-                  name="Ghar Ka Khana"
-                  cuisine="Vegetarian"
-                  rating={4.7}
-                  price={9}
-                  location="789 Oak St, City"
-                  image='/ghar_ka_khana.jpg'
+                  key={index}
+                  _id={mess._id}
+                  name={mess.name}
+                  cuisine={mess.cuisine}
+                  rating={mess.rating}
+                  price={mess.price}
+                  location={mess.location}
+                  image={mess.image}
                 />
-              <MessCard
-                name="Baba da Dhaba"
-                cuisine="Indian"
-                rating={4.5}
-                price={8}
-                location="123 Main St, City"
-                image="/baba_da_dhaba.jpg"
-                imgClassName='object-top'
-              />
-              <MessCard
-                name="Mahalakshami Mess"
-                cuisine="Health Food"
-                rating={4.2}
-                price={10}
-                location="456 Elm St, City"
-                image="/mahalakshami_mess.jpg"
-                imgClassName='object-bottom'
-              />
-              <MessCard
-                name="Ghar Ka Khana"
-                cuisine="Vegetarian"
-                rating={4.7}
-                price={9}
-                location="789 Oak St, City"
-                image='/ghar_ka_khana.jpg'
-              />
+              ))}
             </div>
           </div>
         </div>
@@ -113,6 +120,7 @@ export default function MessSearch() {
 }
 
 interface MessCardProps {
+  _id: string;
   name: string;
   cuisine: string;
   rating: number;
@@ -122,7 +130,7 @@ interface MessCardProps {
   imgClassName?: string;
 }
 
-function MessCard({ name, cuisine, rating, price, location, image, imgClassName }: MessCardProps) {
+function MessCard({ _id, name, cuisine, rating, price, location, image, imgClassName }: MessCardProps) {
   return (
     <Card className="overflow-hidden">
       <img src={image} alt={name} className={`w-full h-60 object-cover ${imgClassName || 'object-center'}`} />
@@ -141,7 +149,7 @@ function MessCard({ name, cuisine, rating, price, location, image, imgClassName 
           <MapPin className="h-5 w-5 text-gray-400" />
           <span className="ml-1 text-sm text-gray-500">{location}</span>
         </div>
-        <Link href={`/mess?name=${name.toLowerCase().replace(/ /g, '-')}`}>
+        <Link href={`/mess/${_id}`}>
             <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
               View Menu
             </Button>

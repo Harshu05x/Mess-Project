@@ -1,11 +1,51 @@
+"use client";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Star, MapPin, Clock, DollarSign } from "lucide-react"
 import Image from "next/image"
+import useMessStore from "@/store/messStore"
+import { use, useEffect, useState } from "react"
+import { usePathname } from "next/navigation";
 
-export default function MessListing() {
+export default function MessDetails({ params }: { params: Promise<{ _id: string }> }) {
+    const { getMessById, messData } = useMessStore()
+    const resolvedParams = use(params);
+
+    const [messDetails, setMessDetails] = useState({
+        _id: "1",
+        name: "Gajanan Mess",
+        address: "Dharmraj Chowk, Akurdi, Pune",
+        phoneNumber: "9876543210",
+        messType: "veg",
+        messImage: "/ghar_ka_khana.jpg",
+        foodItems: [{
+            name: "Butter Chicken",
+            price: 12,
+            description: "Tender chicken in a rich tomato-based sauce"
+        },
+        {
+            name: "Vegetable Biryani",
+            price: 10,
+            description: "Fragrant rice dish with mixed vegetables"
+        },
+        {
+            name: "Palak Paneer",
+            price: 11,
+            description: "Cottage cheese cubes in a creamy spinach sauce"
+        },
+        {
+            name: "Tandoori Roti",
+            price: 2,
+            description: "Whole wheat flatbread baked in a tandoor"
+        }],
+    })
+
+    // useEffect(() => {
+    //     getMessById(resolvedParams._id)
+    // }, [resolvedParams._id])
+
     return (
         <div className="mt-16 min-h-screen bg-gray-100 p-8">
             <div className="max-w-4xl mx-auto space-y-8">
