@@ -2,15 +2,18 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menubar } from "@/components/ui/menubar";
-import { ModeToggle } from "@/components/ui/theme-toggle-button";
-import Image from "next/image";
-import { ShoppingBag, User, Menu, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ShoppingBag } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 
 export function AppNavigationMenu() {
   const pathname = usePathname();
+  const { isSignedIn, user } = useUser();
+  console.log(user, isSignedIn);
   console.log(pathname);
+
   return (
     <>
       {pathname !== "/login" && pathname !== "/register" && (
@@ -39,19 +42,28 @@ export function AppNavigationMenu() {
               Subscriptions
             </Link>
             <div className="flex items-center">
-              <Link href="/login">
-                <Button className="text-sm font-medium bg-orange-500 text-white hover:text-orange-500 hover:border-orange-500 hover:border hover:bg-white">
-                  Login
-                </Button>
-              </Link>
-              <Link href="/register">
-                <Button
-                  variant="outline"
-                  className="text-orange-500 border-orange-500 hover:bg-orange-100 ml-2"
-                >
-                  Sign Up
-                </Button>
-              </Link>
+              {isSignedIn ? (
+                <div className="flex items-center gap-4">
+                  <Link
+                    className="text-sm font-medium hover:underline underline-offset-4"
+                    href="/profile"
+                  >
+                    <Avatar className="">
+                      <AvatarImage
+                        src={user?.imageUrl}
+                        alt={user?.primaryEmailAddress?.emailAddress}
+                      />
+                      <AvatarFallback>{user?.primaryEmailAddress?.emailAddress[0].toUpperCase()}</AvatarFallback>
+                    </Avatar>
+                  </Link>
+                </div>
+              ) : (
+                <SignInButton>
+                  <Button className="text-sm font-medium bg-orange-500 text-white hover:text-orange-500 hover:border-orange-500 hover:border hover:bg-white">
+                    Login
+                  </Button>
+                </SignInButton>
+              )}
             </div>
           </nav>
         </Menubar>

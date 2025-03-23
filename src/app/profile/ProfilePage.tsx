@@ -8,37 +8,47 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
+import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 
 export default function UserProfile() {
   const [isEditing, setIsEditing] = useState(false);
-
+  const { user } = useUser();
   return (
     <div className="mt-16 min-h-screen bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold text-orange-600">User Profile</h1>
-          <Button
-            variant="outline"
-            className="border-orange-500 text-orange-500 hover:bg-orange-50"
-            onClick={() => setIsEditing(!isEditing)}
-          >
-            {isEditing ? "Save Changes" : "Edit Profile"}
-          </Button>
+          <div className="flex items-center space-x-4">
+            <Button
+              variant="outline"
+              className="border-orange-500 text-orange-500 hover:bg-orange-50"
+              onClick={() => setIsEditing(!isEditing)}
+            >
+              {isEditing ? "Save Changes" : "Edit Profile"}
+            </Button>
+            <SignOutButton>
+              <Button
+                variant="outline"
+                className="border-red-500 text-red-500 hover:bg-red-50"
+              >
+                Sign Out
+              </Button>
+            </SignOutButton>
+          </div>
         </div>
-
         <Card>
           <CardContent className="p-6">
             <div className="flex items-center space-x-6">
               <Avatar className="h-24 w-24">
                 <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="User Avatar"
+                  src={user?.imageUrl}
+                  alt={user?.primaryEmailAddress?.emailAddress}
                 />
-                <AvatarFallback>JD</AvatarFallback>
+                <AvatarFallback>{user?.primaryEmailAddress?.emailAddress.toUpperCase()}</AvatarFallback>
               </Avatar>
               <div>
-                <h2 className="text-2xl font-semibold">John Doe</h2>
-                <p className="text-gray-500">john.doe@example.com</p>
+                <h2 className="text-2xl font-semibold">{user?.fullName}</h2>
+                <p className="text-gray-500">{user?.primaryEmailAddress?.emailAddress}</p>
                 <div className="flex items-center mt-2">
                   <Badge variant="secondary" className="mr-2 bg-orange-100">
                     Premium Member
@@ -69,18 +79,18 @@ export default function UserProfile() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First name</Label>
-                    <Input defaultValue="John" disabled={!isEditing} />
+                    <Input value={user?.firstName || ""} disabled={!isEditing} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last name</Label>
-                    <Input defaultValue="Doe" disabled={!isEditing} />
+                    <Input value={user?.lastName || ""} disabled={!isEditing} />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input
                     type="email"
-                    defaultValue="john.doe@example.com"
+                    value={user?.primaryEmailAddress?.emailAddress || ""}
                     disabled={!isEditing}
                   />
                 </div>
